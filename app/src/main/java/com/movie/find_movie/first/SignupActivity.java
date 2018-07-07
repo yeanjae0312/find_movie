@@ -24,8 +24,6 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.concurrent.ExecutionException;
 
-import static android.widget.Toast.makeText;
-
 public class SignupActivity extends AppCompatActivity {
 
     final int REQ_CODE_SELECT_IMAGE = 100;
@@ -39,7 +37,7 @@ public class SignupActivity extends AppCompatActivity {
     String id;
     String user_email;
     String serverURL = "http://203.252.218.95/Movie/register.jsp";
-
+    ImageView signbefore;
     String imgUrl = "";
     Uri data;
 
@@ -65,7 +63,15 @@ public class SignupActivity extends AppCompatActivity {
         ImageView id_test = (ImageView)findViewById(R.id.id_test);
 
         ImageView btn_signup = (ImageView)findViewById(R.id.btn_signup);
+        signbefore = (ImageView)findViewById(R.id.signbefore);
 
+
+        signbefore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplication(),LoginActivity.class));
+            }
+        });
         service = ApplicationController.getInstance().getNetworkService();
 
 /*      // 이메일 중복확인버튼_파머

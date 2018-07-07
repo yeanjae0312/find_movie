@@ -12,6 +12,7 @@
         android:layout_height="50dp"
         android:background="@color/yellow">
         <ImageView
+            android:id="@+id/chatbefore"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/back"/>
@@ -22,19 +23,7 @@
             android:textStyle="bold"
             android:textSize="18dp"
             android:layout_centerInParent="true"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="편집"
-            android:textSize="20dp"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="320dp"/>
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/logouticon"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="370dp"/>
+
     </RelativeLayout>
 
     <ListView

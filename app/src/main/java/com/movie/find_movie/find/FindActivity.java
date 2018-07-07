@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.movie.find_movie.R;
+import com.movie.find_movie.chatting.Chat;
 import com.movie.find_movie.chatting.ChattingActivity;
 import com.movie.find_movie.friends.MainActivity;
 import com.movie.find_movie.like.LikeActivity;
@@ -18,12 +19,20 @@ public class FindActivity extends AppCompatActivity {
     ViewPager viewPager;
     PagerAdapter pagerAdapter;
     TabLayout tabLayout;
-
+    ImageView findbefore;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_find);
+        findbefore = (ImageView)findViewById(R.id.findbefore);
 
+
+        findbefore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplication(),Chat.class));
+            }
+        });
         ImageView go_friend = (ImageView)findViewById(R.id.go_friend);
         ImageView go_chat = (ImageView)findViewById(R.id.go_chat);
         ImageView go_like = (ImageView)findViewById(R.id.go_like);

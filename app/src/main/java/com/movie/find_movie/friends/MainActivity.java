@@ -12,6 +12,7 @@ import android.widget.ListView;
 
 import com.movie.find_movie.R;
 import com.movie.find_movie.chatting.ChattingActivity;
+import com.movie.find_movie.first.LoginActivity;
 import com.movie.find_movie.like.LikeActivity;
 
 import java.util.ArrayList;
@@ -24,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
     ListView listView;
     ArrayList<FriendDatas> friendDatas;
     FriendAdapter friendAdapter;
+    ImageView friendbefore;
+
     private static final int RC_LOCATION = 1;
     private static final int RC_LOCATION_UPDATE = 2;
 
@@ -57,7 +60,15 @@ public class MainActivity extends AppCompatActivity {
         ImageView go_friend = (ImageView)findViewById(R.id.go_friend);
         ImageView go_chat = (ImageView)findViewById(R.id.go_chat);
         ImageView go_like = (ImageView)findViewById(R.id.go_like);
+        friendbefore = (ImageView)findViewById(R.id.friendbefore);
 
+
+        friendbefore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplication(),LoginActivity.class));
+            }
+        });
         go_friend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

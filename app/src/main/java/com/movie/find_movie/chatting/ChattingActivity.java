@@ -19,6 +19,7 @@ public class ChattingActivity extends AppCompatActivity {
     ListView listView;
     ArrayList<ChattingDatas> chattingDatas;
     ChattingAdapter chattingAdapter;
+    ImageView chatbefore;
 
 
     @Override
@@ -30,6 +31,15 @@ public class ChattingActivity extends AppCompatActivity {
         ImageView go_chat = (ImageView)findViewById(R.id.go_chat);
         ImageView go_like = (ImageView)findViewById(R.id.go_like);
 
+        chatbefore = (ImageView)findViewById(R.id.chatbefore);
+
+
+        chatbefore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplication(),MainActivity.class));
+            }
+        });
 
         go_friend.setOnClickListener(new View.OnClickListener() {
             @Override

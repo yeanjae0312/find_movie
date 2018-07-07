@@ -19,6 +19,7 @@ public class LikeActivity extends AppCompatActivity {
     ListView listView;
     ArrayList<LikeDatas> likeDatases;
     LikeAdapter likeAdapter;
+    ImageView likebefore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +29,15 @@ public class LikeActivity extends AppCompatActivity {
         ImageView go_friend = (ImageView)findViewById(R.id.go_friend);
         ImageView go_chat = (ImageView)findViewById(R.id.go_chat);
         ImageView go_like = (ImageView)findViewById(R.id.go_like);
+        likebefore = (ImageView)findViewById(R.id.likebefore);
 
+
+        likebefore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplication(),MainActivity.class));
+            }
+        });
         ImageView confirm = (ImageView)findViewById(R.id.confirm);
         confirm.setOnClickListener(new View.OnClickListener() {
             @Override
